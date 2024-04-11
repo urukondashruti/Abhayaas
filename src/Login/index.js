@@ -42,7 +42,6 @@ const Login = () => {
     e.preventDefault();
     setErrors(Validation(values));
 
-    // Check if there are no errors
     if (values.email!=="" && values.password!=="") {
       // Redirect to profile with props
       navigate("/profile", { state: { info: values } }); // Use navigate function
