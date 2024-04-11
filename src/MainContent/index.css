@@ -1,0 +1,52 @@
+.carousel-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .section-heading {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .top-students-container,
+  .reviews-container {
+    padding: 20px;
+  }
+  
+  .student-list,
+  .reviews-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .student-list li,
+  .reviews-list li {
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .top-students-container,
+    .reviews-container {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-img {
+      height: 200px;
+    }
+  }
+  .containerMain{
+    padding-left:50px;
+    padding-right:50px;
+  }
+  .student-list{
+    width:500px;
+  }
+  .top-students-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }

@@ -1,0 +1,41 @@
+.footer-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-size: 14px;
+}
+
+.para {
+    font-size: 16px;
+}
+
+.footer-line {
+    border-color: #ccc;
+}
+
+.icon {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .col-12,
+    .col-md-6 {
+        width: 100%;
+    }
+}
+.marginright{
+    margin-right:10px;
+}

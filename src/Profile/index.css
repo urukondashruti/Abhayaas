@@ -1,0 +1,46 @@
+/* Profile.css */
+.profile-container {
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-title {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .profile-info {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .profile-field {
+    font-family: Arial, sans-serif;
+    color: #666;
+    margin-right: 10px;
+  }
+  
+  .profile-value {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Media Query for responsiveness */
+  @media (max-width: 768px) {
+    .profile-container {
+      display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+      max-width: 100%;
+      padding: 10px;
+    }
+  }
+  

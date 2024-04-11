@@ -1,0 +1,26 @@
+/* index.css */
+
+.products-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .books-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Add more styles as needed for BooksItem, Header, Footer, etc. */
+  

@@ -1,0 +1,41 @@
+.navbar {
+  font-family: 'Arial', sans-serif; /* Change font family as needed */
+}
+
+.nav-link {
+  color: #333; /* Change color as needed */
+  margin-right: 15px; /* Adjust spacing between links */
+}
+
+.nav-link:hover {
+  color: #555; /* Change color on hover */
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    margin-right: 0;
+    margin-bottom: 10px; /* Adjust spacing for smaller screens */
+    display: block;
+  }
+}
+
+.size{
+  width:50px;
+  height:40px;
+}
+
+@media (min-width: 769px) {
+  .margin{
+    margin-left:250px;
+  }
+}
+
+
+.joinButton{
+  background-color:black;
+  color:white;
+  font-size:10px;
+  height:40px;
+  width:80px;
+}
+
