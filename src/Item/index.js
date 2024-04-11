@@ -1,6 +1,6 @@
 // Item.js
 import React from 'react';
-import './Item.css'; // Import CSS file for Item component
+import './index.css'; // Import CSS file for Item component
 
 const Item = (props) => {
     const { item } = props;
