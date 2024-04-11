@@ -1,46 +1,132 @@
-/* Profile.css */
+/* index.css */
+
+/* Profile Container */
 .profile-container {
-   display:flex;
-   flex-direction:column;
-   align-items:center;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background color */
+  border: 1px solid #ced4da; /* Border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Add padding for spacing */
+}
+
+/* Profile Info Section */
+.container-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width:1000px;
+  font-size: 15px;
+  background-color: #fff; /* White background color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 50px; /* Add padding for spacing */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+}
+
+.edit-button,
+.logout-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  max-width: 100px;
+}
+
+/* Address Info Section */
+.address-info {
+  text-align: center;
+  margin-top: 20px;
+  padding-left:30px;
+}
+
+/* Profile Options Section */
+.profile-options {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button1,
+.activeButton {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  max-width: 100px;
+  margin-left:20px;
+}
+
+.activeButton {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Active Field Section */
+.active-field {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .container-profile {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .profile-title {
-    font-family: Arial, sans-serif;
-    color: #333;
+
+  .profile-info,
+  .address-info {
+    text-align: center;
   }
-  
-  .profile-info {
-    display: flex;
+
+  .button-container {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .edit-button,
+  .logout-button {
+    margin-right: 0;
     margin-bottom: 10px;
   }
-  
-  .profile-field {
-    font-family: Arial, sans-serif;
-    color: #666;
-    margin-right: 10px;
-  }
-  
-  .profile-value {
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  /* Media Query for responsiveness */
-  @media (max-width: 768px) {
-    .profile-container {
-      display:flex;
-   flex-direction:column;
-   justify-content:center;
-   align-items:center;
-      max-width: 100%;
-      padding: 10px;
-    }
-  }
-  
+}

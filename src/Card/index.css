@@ -1,70 +1,65 @@
-.card-container {
+.container2 {
     display:flex;
     flex-direction:column;
     justify-content:center;
-}
-
-.card {
-    width: 600px;
-    margin: 20px;
+    align-items:center;
+    margin-top:40px;
+    margin-bottom:40px;
+  }
+  .action-btn{
+    margin-top:10px;
+  }
+  .card {
+    width: 500px;
     padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
+    background-color: #fff;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.total {
-    font-family: Arial, sans-serif;
-    color: #333;
-    font-size:20px;
-}
-
-.checkout-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    width:150px;
-    height:40px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-
-.title {
-    font-family: Arial, sans-serif;
-    color: #333;
-    font-size:20px;
-}
-
-.info {
-    font-family: Arial, sans-serif;
-    color: #666;
-}
-
-.action-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-.checkCon{
+  }
+  .click-btn{
+    width:80px;
+  }
+  .footerBut{
+    width:70px;
+  }
+  .FooterCon{
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
-    margin-bottom:30px;
-}
-.con{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin-top:200px;
-}
+  }
+  .checkout-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .total {
+    margin: 0;
+    font-size: 20px;
+  }
+  .click-btn{
+    margin-top:10px;
+  }
+  .checkout-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    width:140px;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title {
+    margin: 0;
+    font-size:20px;
+  }

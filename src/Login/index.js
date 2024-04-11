@@ -6,11 +6,13 @@ import "./index.css"; // Import CSS file
 
 const Login = () => {
   const [values, setValues] = useState({
+    name:"",
     email: "",
     password: ""
   });
 
   const [errors, setErrors] = useState({
+    name:"",
     email: "",
     password: ""
   });
@@ -19,6 +21,12 @@ const Login = () => {
 
   function Validation(values) {
     let error = {};
+
+    if (values.name === "") {
+      error.name = "name should not be empty";
+    } else {
+      error.name = "";
+    }
 
     if (values.email === "") {
       error.email = "email should not be empty";
@@ -42,7 +50,7 @@ const Login = () => {
     e.preventDefault();
     setErrors(Validation(values));
 
-    if (values.email!=="" && values.password!=="") {
+    if (values.name!=="" && values.email!=="" && values.password!=="") {
       // Redirect to profile with props
       navigate("/profile", { state: { info: values } }); // Use navigate function
     }
@@ -52,6 +60,17 @@ const Login = () => {
     <div className="login-container">
       <div className="login-form">
         <form onSubmit={handleSubmit}>
+        <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              onChange={handleInput}
+              value={values.name}
+              name="name"
+              placeholder="Enter Name"
+            />
+            {errors.name && <p className="error">{errors.name}</p>}
+          </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input

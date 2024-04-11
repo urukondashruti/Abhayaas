@@ -1,0 +1,59 @@
+/* index.css */
+
+.orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.order-card {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-details,
+.order-actions {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.action-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    width: 100px;
+    margin-right:2px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    .order-card {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .orders-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

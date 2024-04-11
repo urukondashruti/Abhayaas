@@ -1,3 +1,6 @@
+.navContainer{
+  background-color:#f0f0f0;
+}
 .navbar {
   font-family: 'Arial', sans-serif; /* Change font family as needed */
 }
@@ -10,7 +13,9 @@
 .nav-link:hover {
   color: #555; /* Change color on hover */
 }
-
+.margin{
+  margin-right:0px;
+}
 @media (max-width: 768px) {
   .nav-link {
     margin-right: 0;
@@ -24,9 +29,15 @@
   height:40px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 769px) and (max-width: 1200px){
   .margin{
     margin-left:250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .margin{
+    margin-left:450px;
   }
 }
 

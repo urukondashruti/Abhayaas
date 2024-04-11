@@ -1,62 +1,74 @@
-/* index.css */
-
+/* Item.css */
 .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.item-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.item-details {
+  text-align: center;
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.item-marks {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .item {
+      padding: 10px;
   }
-  
-  .item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+  .item-image {
+      width: 120px;
+      height: 120px;
   }
-  
-  .item p {
-    margin: 5px 0;
+
+  .item-name {
+      font-size: 16px;
   }
-  
-  .item p.name {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
+
+  .item-marks {
+      font-size: 14px;
   }
-  
-  .item p.marks {
-    font-family: 'Arial', sans-serif;
-    color: #666;
-    font-size: 16px;
+}
+
+@media (max-width: 576px) {
+  .item {
+      margin: 5px;
   }
-  
-  @media screen and (min-width: 768px) {
-    .item {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-    }
-  
-    .item img {
-      max-width: 200px;
-      margin-right: 20px;
-    }
-  
-    .item p {
-      margin: 0;
-    }
-  
-    .item p.name {
-      font-size: 24px;
-    }
-  
-    .item p.marks {
-      font-size: 20px;
-    }
+
+  .item-image {
+      width: 100px;
+      height: 100px;
   }
-  
+
+  .item-name {
+      font-size: 14px;
+  }
+
+  .item-marks {
+      font-size: 12px;
+  }
+}

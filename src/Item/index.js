@@ -1,15 +1,16 @@
+// Item.js
 import React from 'react';
-import './index.css';
+import './Item.css'; // Import CSS file for Item component
 
 const Item = (props) => {
     const { item } = props;
     const { name, imageUrl, Marks } = item;
     return (
         <li className="item">
-            <img src={imageUrl} alt="img" />
-            <div>
-                <p className="name">{name}</p>
-                <p className="marks">{Marks}</p>
+            <img className="item-image" src={imageUrl} alt="img" />
+            <div className="item-details">
+                <p className="item-name">{name}</p>
+                <p className="item-marks">{Marks}</p>
             </div>
         </li>
     );

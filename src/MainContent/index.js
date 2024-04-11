@@ -28,6 +28,33 @@ const TopStudents = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIv940EEUFrZBYPoVjUxUWNH6AsQ1LNS033Q',
     Marks: '98.9 Percentile',
   },
+  {
+    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    name: 'John Manon',
+    imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgNHHubDSK_HQroqFpIz-dBGohwD6jLSAPmA',
+    Marks: '98.9 Percentile',
+  },
+  {
+    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    name: 'rahul gohor',
+    imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1sgXixToq2MXKPGjAphcdSCeyE8E6atobg',
+    Marks: '100 Percentile',
+  },{
+    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    name: 'Sumit malhotra',
+    imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvWCRP9sJvDg9iJKyujh-VWKKGNWQClJeQzA',
+    Marks: '96.9 Percentile',
+  },
+  {
+    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    name: 'rama malhotra',
+    imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQATqPj51MdWhmjc_qFkoufNiRSSH43YJ7NgQ',
+    Marks: '96.2 Percentile',
+  }
 ];
 
 const reviews = [
@@ -65,7 +92,7 @@ const reviews = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhYuDo1w5fzaiqv0blTOnpRa5wFlxNOXyI2Q',
     description:
       'Karo Abhayaas is an educational start-up that aims to create the world’s largest educational repository. It is doing so by empowering educators like us.',
-  },
+  }
 ];
 
 const MainContent = () => {
@@ -73,7 +100,7 @@ const MainContent = () => {
     <>
       <Header />
       <div className="containerMain">
-      <Carousel>
+      <Carousel className="carouselCon">
         <Carousel.Item>
           <img
             className="carousel-img"
