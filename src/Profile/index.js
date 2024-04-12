@@ -1,17 +1,19 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import CoursesContext from '../Context/CoursesContext';
-import Orders from "../Orders";
-import Tests from "../Tests";
-import Questions from "../Questions";
-import "./index.css"; // Import CSS file for styling
+import React from "react"; // Importing React library
+import { useLocation } from "react-router-dom"; // Importing useLocation hook from react-router-dom
+import CoursesContext from '../Context/CoursesContext'; // Importing CoursesContext from local file
+import Orders from "../Orders"; // Importing Orders component from local file
+import Tests from "../Tests"; // Importing Tests component from local file
+import Questions from "../Questions"; // Importing Questions component from local file
+import "./index.css"; // Importing CSS file for styling
 
+// Options for profile navigation
 const options = [
   {id:"orders", name:"ORDERS"},
   {id:"tests", name:"TESTS"},
   {id:"QA", name:"Q/A"}
 ]
 
+// Profile component
 const Profile = () => {
   // Access the props passed from Login component
   const { state } = useLocation();
@@ -25,6 +27,7 @@ const Profile = () => {
         onChangeActive,
       } = value
 
+      // Component to display active field based on activeValue
       const DisplayActiveField = () => {
         console.log(activeValue);
         if (activeValue === "orders") {
@@ -78,4 +81,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile; // Exporting Profile component

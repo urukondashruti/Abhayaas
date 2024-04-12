@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
-import BooksItem from '../BooksItem';
-import CoursesContext from '../Context/CoursesContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faMinus  } from '@fortawesome/free-solid-svg-icons';
-import './index.css';
+import React from 'react'; // Import React library
+import Header from '../Header'; // Import Header component
+import Footer from '../Footer'; // Import Footer component
+import BooksItem from '../BooksItem'; // Import BooksItem component
+import CoursesContext from '../Context/CoursesContext'; // Import CoursesContext component
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon component
+import { faSearch } from '@fortawesome/free-solid-svg-icons'; // Import faSearch icon from FontAwesome
+import './index.css'; // Import CSS file
 
+// Array of books data
 const BooksList = [
   {
     id: '4',
@@ -38,36 +39,45 @@ const BooksList = [
   }
 ];
 
+// Functional component Products
 const Products = () => (
   <CoursesContext.Consumer>
     {value => {
+      // Destructure values from context
       const {
         searchvalue,
         onchangeSearch,
-      } = value
+      } = value;
+      
+      // Function to handle search input change
       const changeSearch = (event) => {
-        onchangeSearch(event.target.value)
+        onchangeSearch(event.target.value);
       }
+
+      // Filter the BooksList based on search value
       const FilteredList = BooksList.filter(each => (
         each.name.toLowerCase().includes(searchvalue.toLowerCase())
-      ))
+      ));
+
       return (
         <div className="products-container">
-          <Header />
+          <Header /> {/* Render Header component */}
+          {/* Search input */}
           <div className="search-container1">
-          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+            <FontAwesomeIcon icon={faSearch} className="search-icon" />
             <input type="search" value={searchvalue} onChange={changeSearch} className="search-input1" placeholder="Enter Subject"/>
           </div>
+          {/* Render each book item */}
           <ul className="books-list">
             {FilteredList.map(each => (
               <BooksItem key={each.id} item={each} />
             ))}
           </ul>
-          <Footer />
+          <Footer /> {/* Render Footer component */}
         </div>
-      )
+      );
     }}
   </CoursesContext.Consumer>
-)
+);
 
-export default Products;
+export default Products; // Export the Products component

@@ -1,11 +1,12 @@
-import React from 'react';
-import { Carousel } from 'react-bootstrap';
-import Header from '../Header';
-import Footer from '../Footer';
-import Item from '../Item';
-import ReviewItems from '../ReviewItems';
-import './index.css';
+import React from 'react'; // Importing React library
+import { Carousel } from 'react-bootstrap'; // Importing Carousel component from 'react-bootstrap' library
+import Header from '../Header'; // Importing Header component from local file
+import Footer from '../Footer'; // Importing Footer component from local file
+import Item from '../Item'; // Importing Item component from local file
+import ReviewItems from '../ReviewItems'; // Importing ReviewItems component from local file
+import './index.css'; // Importing CSS file for styling
 
+// Array containing information about top students
 const TopStudents = [
   {
     id: 'c22777fe-f72e-11eb-9a03-0242ac130003',
@@ -57,6 +58,7 @@ const TopStudents = [
   }
 ];
 
+// Array containing reviews
 const reviews = [
   {
     id: 'c22777fe-f72e-11eb-9a03-0242ac130003',
@@ -95,61 +97,69 @@ const reviews = [
   }
 ];
 
+// MainContent component
 const MainContent = () => {
   return (
     <>
-      <Header />
-      <div className="containerMain">
-      <Carousel className="carouselCon">
-        <Carousel.Item>
-          <img
-            className="carousel-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhG012ZoFCbHxF_jbJ_aiIpf8VZm7bl0yyMw"
-            alt="First slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="carousel-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkwbp6b16p1oxQCp5usFIpyHHSLBvLu0oJ2Q"
-            alt="Second slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="carousel-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtz2znCSHN4_eAJ7Q6slp5tBg7aYilRlJ2A"
-            alt="Third slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="carousel-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVMI3uxIYRIiUKw1KLbGOa1Gh5_qlANrvxMg"
-            alt="Third slide"
-          />
-        </Carousel.Item>
-      </Carousel>
-      <div className="top-students-container">
-        <h1 className="section-heading">Top Students</h1>
-        <ul className="student-list">
-          {TopStudents.map((eachItem) => (
-            <Item key={eachItem.id} item={eachItem} />
-          ))}
-        </ul>
+      <Header /> {/* Rendering Header component */}
+      <div className="containerMain"> {/* Main container */}
+        <Carousel className="carouselCon"> {/* Carousel for images */}
+          {/* Carousel items */}
+          { /* 1st slide */}
+          <Carousel.Item>
+            <img
+              className="carousel-img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhG012ZoFCbHxF_jbJ_aiIpf8VZm7bl0yyMw"
+              alt="First slide"
+            />
+          </Carousel.Item>
+          {/* 2nd slide */}
+          <Carousel.Item>
+            <img
+              className="carousel-img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkwbp6b16p1oxQCp5usFIpyHHSLBvLu0oJ2Q"
+              alt="Second slide"
+            />
+          </Carousel.Item>
+          {/* 3rd slide */}
+          <Carousel.Item>
+            <img
+              className="carousel-img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtz2znCSHN4_eAJ7Q6slp5tBg7aYilRlJ2A"
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          {/* 4th slide */}
+          <Carousel.Item>
+            <img
+              className="carousel-img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVMI3uxIYRIiUKw1KLbGOa1Gh5_qlANrvxMg"
+              alt="Third slide"
+            />
+          </Carousel.Item>
+        </Carousel>
+        <div className="top-students-container"> {/* Container for top students */}
+          <h1 className="section-heading">Top Students</h1> {/* Heading */}
+          <ul className="student-list"> {/* List of top students */}
+            {/* Mapping through top students array and rendering each student */}
+            {TopStudents.map((eachItem) => (
+              <Item key={eachItem.id} item={eachItem} /> // Rendering Item component for each student
+            ))}
+          </ul>
+        </div>
+        <div className="reviews-container"> {/* Container for reviews */}
+          <h1 className="section-heading">Reviews</h1> {/* Heading */}
+          <ul className="reviews-list"> {/* List of reviews */}
+            {/* Mapping through reviews array and rendering each review */}
+            {reviews.map((eachItem) => (
+              <ReviewItems key={eachItem.id} item={eachItem} /> // Rendering ReviewItems component for each review
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="reviews-container">
-        <h1 className="section-heading">Reviews</h1>
-        <ul className="reviews-list">
-          {reviews.map((eachItem) => (
-            <ReviewItems key={eachItem.id} item={eachItem} />
-          ))}
-        </ul>
-      </div>
-      </div>
-      <Footer />
+      <Footer /> {/* Rendering Footer component */}
     </>
   );
 };
 
-export default MainContent;
+export default MainContent; // Exporting MainContent component

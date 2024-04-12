@@ -1,24 +1,26 @@
-// Login.js
-
+// Import necessary dependencies and styles
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "./index.css"; // Import CSS file
+import { Link, useNavigate } from "react-router-dom"; // Import Link and useNavigate from react-router-dom
+import "./index.css"; // Import CSS file for styling
 
+// Login component
 const Login = () => {
+  // Initialize state for form values and errors
   const [values, setValues] = useState({
-    name:"",
+    name: "",
     email: "",
     password: ""
   });
 
   const [errors, setErrors] = useState({
-    name:"",
+    name: "",
     email: "",
     password: ""
   });
 
-  const navigate = useNavigate(); // Use useNavigate hook
+  const navigate = useNavigate(); // Use useNavigate hook to navigate programmatically
 
+  // Function to validate form inputs
   function Validation(values) {
     let error = {};
 
@@ -42,25 +44,29 @@ const Login = () => {
     return error;
   }
 
+  // Function to handle input changes
   const handleInput = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(Validation(values));
 
-    if (values.name!=="" && values.email!=="" && values.password!=="") {
+    // Check if all fields are filled
+    if (values.name !== "" && values.email !== "" && values.password !== "") {
       // Redirect to profile with props
-      navigate("/profile", { state: { info: values } }); // Use navigate function
+      navigate("/profile", { state: { info: values } }); // Use navigate function to redirect to profile page
     }
   };
 
+  // Render login form
   return (
     <div className="login-container">
       <div className="login-form">
         <form onSubmit={handleSubmit}>
-        <div className="form-group">
+          <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
               type="text"
@@ -101,4 +107,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login; // Export Login component

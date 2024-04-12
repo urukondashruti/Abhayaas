@@ -1,5 +1,8 @@
 .navContainer{
   background-color:#f0f0f0;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
 }
 .navbar {
   font-family: 'Arial', sans-serif; /* Change font family as needed */
@@ -31,13 +34,14 @@
 
 @media (min-width: 769px) and (max-width: 1200px){
   .margin{
-    margin-left:250px;
+   
+    margin-left:auto;
   }
 }
 
 @media (min-width: 1200px) {
   .margin{
-    margin-left:450px;
+    margin-left:auto;
   }
 }
 

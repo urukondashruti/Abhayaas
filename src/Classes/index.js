@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import Header from '../Header';
-import ClassesItem from '../ClassesItem';
-import './index.css';
+import React from 'react'; // Import React library
+import Header from '../Header'; // Import Header component
+import ClassesItem from '../ClassesItem'; // Import ClassesItem component
+import './index.css'; // Import CSS file for styling
 
+// Array of classes data
 const ClassesList = [
   {
     id: '4',
@@ -12,13 +13,13 @@ const ClassesList = [
   },
   {
     id: '3',
-    name: '90 Days Stretagy',
+    name: '90 Days Strategy',
     videoUrl: '7wt-D0-sDNM',
     description: 'The channel will give you all the information you need to build a thorough study plan, exam preparation, strategy, and motivation, including everything from the basics to the nuances of each JEE and NEET topic. ',
   },
   {
     id: '6',
-    name: 'ANIMAL KINGKOM',
+    name: 'ANIMAL KINGDOM',
     videoUrl: 'dGAsJBs8jps',
     description: 'Get ready to accelerate your NEET preparation with our 45 Days crash course a comprehensive series designed to boost your understanding and mastery of key concepts, ensuring your selection the upcoming NEET 2024 exams. In this video, Seep Pahuja discusses Animal Kingdom for NEET 2024.'
   },
@@ -30,18 +31,20 @@ const ClassesList = [
   }
 ];
 
+// Functional component Classes
 const Classes = () => {
   return (
     <div>
-      <Header className="header" />
-      <ul className="classes-list">
+      <Header className="header" /> {/* Render Header component */}
+      <ul className="classes-list"> {/* Container for classes list */}
+        {/* Map over ClassesList array and render ClassesItem component for each class */}
         {ClassesList.map(each => (
           <ClassesItem key={each.id} item={each} className="classes-item" />
         ))}
       </ul>
-      <p className="para">1 2 3 4 5</p>
+      <p className="para">1 2 3 4 5</p> {/* Paragraph */}
     </div>
   )
-            }
+}
 
-export default Classes;
+export default Classes; // Export the Classes component
