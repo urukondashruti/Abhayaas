@@ -1,6 +1,78 @@
-import React, { useState } from "react"; // Importing React and useState hook from React
-import { Link } from "react-router-dom"; // Importing Link component from react-router-dom
-import "./index.css"; // Import CSS file
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+// Styled components
+const SignupContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const FormContainer = styled.div`
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
+`;
+
+const InputGroup = styled.div`
+  margin-bottom: 15px;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+
+  &.error {
+    border-color: #dc3545;
+  }
+`;
+
+const Label = styled.label`
+  font-weight: bold;
+`;
+
+const ErrorMessage = styled.p`
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+`;
+
+const SubmitButton = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const LoginLink = styled(Link)`
+  display: block;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 function Signup() {
   // State variables to store form values and errors
@@ -48,19 +120,18 @@ function Signup() {
   // Function to handle form submission
   const SubmitForm = (e) => {
     e.preventDefault();
-    setErrors(Validation(values)); // Validate form inputs and set errors
+    setErrors(Validation(values));
   };
 
   return (
-    <div className="signup-container">
-      <div className="form-container">
+    <SignupContainer>
+      <FormContainer>
         <h1>Sign up</h1>
-        {/* Form element with onSubmit event handler */}
         <form onSubmit={SubmitForm}>
           {/* Input field for name */}
-          <div className="input-group">
-            <label htmlFor="name">Name</label>
-            <input
+          <InputGroup>
+            <Label htmlFor="name">Name</Label>
+            <Input
               type="text"
               onChange={handleInput}
               value={values.name}
@@ -69,12 +140,12 @@ function Signup() {
               className={errors.name ? "error" : ""}
             />
             {/* Display error message if name is empty */}
-            {errors.name && <p className="error-message">{errors.name}</p>}
-          </div>
+            {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+          </InputGroup>
           {/* Input field for email */}
-          <div className="input-group">
-            <label htmlFor="email">Email</label>
-            <input
+          <InputGroup>
+            <Label htmlFor="email">Email</Label>
+            <Input
               type="email"
               onChange={handleInput}
               value={values.email}
@@ -83,12 +154,12 @@ function Signup() {
               className={errors.email ? "error" : ""}
             />
             {/* Display error message if email is empty */}
-            {errors.email && <p className="error-message">{errors.email}</p>}
-          </div>
+            {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+          </InputGroup>
           {/* Input field for password */}
-          <div className="input-group">
-            <label htmlFor="password">Password</label>
-            <input
+          <InputGroup>
+            <Label htmlFor="password">Password</Label>
+            <Input
               type="password"
               onChange={handleInput}
               value={values.password}
@@ -97,17 +168,15 @@ function Signup() {
               className={errors.password ? "error" : ""}
             />
             {/* Display error message if password is empty */}
-            {errors.password && (
-              <p className="error-message">{errors.password}</p>
-            )}
-          </div>
+            {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
+          </InputGroup>
           {/* Submit button */}
-          <button type="submit">Sign up</button>
+          <SubmitButton type="submit">Sign up</SubmitButton>
           {/* Link to navigate to login page */}
-          <Link to="/login">Login</Link>
+          <LoginLink to="/login">Login</LoginLink>
         </form>
-      </div>
-    </div>
+      </FormContainer>
+    </SignupContainer>
   );
 }
 

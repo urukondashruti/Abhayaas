@@ -1,14 +1,53 @@
-import React from 'react'; // Import React library
-import Header from '../Header'; // Import Header component
-import Footer from '../Footer'; // Import Footer component
-import BooksItem from '../BooksItem'; // Import BooksItem component
-import CoursesContext from '../Context/CoursesContext'; // Import CoursesContext component
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon component
-import { faSearch } from '@fortawesome/free-solid-svg-icons'; // Import faSearch icon from FontAwesome
-import './index.css'; // Import CSS file
+import React from 'react';
+import styled from 'styled-components';
+import Header from '../Header';
+import Footer from '../Footer';
+import BooksItem from '../BooksItem';
+import CoursesContext from '../Context/CoursesContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+// Styled components
+const ProductsContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+const SearchContainer = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+`;
+
+const SearchIcon = styled(FontAwesomeIcon)`
+  height: 20px;
+  width: 30px;
+  margin-left: 20px;
+  margin-top: 10px;
+`;
+
+const SearchInput = styled.input`
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+`;
+
+const BooksList = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
 
 // Array of books data
-const BooksList = [
+const BooksList1 = [
   {
     id: '4',
     name: 'NEET BIOLOGY',
@@ -43,41 +82,38 @@ const BooksList = [
 const Products = () => (
   <CoursesContext.Consumer>
     {value => {
-      // Destructure values from context
-      const {
-        searchvalue,
-        onchangeSearch,
-      } = value;
-      
-      // Function to handle search input change
-      const changeSearch = (event) => {
-        onchangeSearch(event.target.value);
-      }
+      const { searchvalue, onchangeSearch } = value;
 
-      // Filter the BooksList based on search value
-      const FilteredList = BooksList.filter(each => (
+      const changeSearch = event => {
+        onchangeSearch(event.target.value);
+      };
+
+      const FilteredList = BooksList1.filter(each =>
         each.name.toLowerCase().includes(searchvalue.toLowerCase())
-      ));
+      );
 
       return (
-        <div className="products-container">
-          <Header /> {/* Render Header component */}
-          {/* Search input */}
-          <div className="search-container1">
-            <FontAwesomeIcon icon={faSearch} className="search-icon" />
-            <input type="search" value={searchvalue} onChange={changeSearch} className="search-input1" placeholder="Enter Subject"/>
-          </div>
-          {/* Render each book item */}
-          <ul className="books-list">
+        <ProductsContainer>
+          <Header />
+          <SearchContainer>
+            <SearchIcon icon={faSearch} className="search-icon" />
+            <SearchInput
+              type="search"
+              value={searchvalue}
+              onChange={changeSearch}
+              placeholder="Enter Subject"
+            />
+          </SearchContainer>
+          <BooksList>
             {FilteredList.map(each => (
               <BooksItem key={each.id} item={each} />
             ))}
-          </ul>
-          <Footer /> {/* Render Footer component */}
-        </div>
+          </BooksList>
+          <Footer />
+        </ProductsContainer>
       );
     }}
   </CoursesContext.Consumer>
 );
 
-export default Products; // Export the Products component
+export default Products;

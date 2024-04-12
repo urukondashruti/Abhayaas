@@ -1,11 +1,73 @@
-// Import necessary dependencies and styles
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import Link and useNavigate from react-router-dom
-import "./index.css"; // Import CSS file for styling
+import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-// Login component
+// Styled components
+const LoginContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const LoginForm = styled.div`
+  width: 300px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 20px;
+`;
+
+const Label = styled.label`
+  display: block;
+  font-weight: bold;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+`;
+
+const Error = styled.p`
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+`;
+
+const LoginButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const CreateAccountLink = styled(Link)`
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const Login = () => {
-  // Initialize state for form values and errors
+  // State for form values and errors
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -18,26 +80,27 @@ const Login = () => {
     password: ""
   });
 
-  const navigate = useNavigate(); // Use useNavigate hook to navigate programmatically
+  // Hook to navigate programmatically
+  const navigate = useNavigate();
 
   // Function to validate form inputs
   function Validation(values) {
     let error = {};
 
     if (values.name === "") {
-      error.name = "name should not be empty";
+      error.name = "Name should not be empty";
     } else {
       error.name = "";
     }
 
     if (values.email === "") {
-      error.email = "email should not be empty";
+      error.email = "Email should not be empty";
     } else {
       error.email = "";
     }
 
     if (values.password === "") {
-      error.password = "password should not be empty";
+      error.password = "Password should not be empty";
     } else {
       error.password = "";
     }
@@ -57,54 +120,56 @@ const Login = () => {
     // Check if all fields are filled
     if (values.name !== "" && values.email !== "" && values.password !== "") {
       // Redirect to profile with props
-      navigate("/profile", { state: { info: values } }); // Use navigate function to redirect to profile page
+      navigate("/profile", { state: { info: values } });
     }
   };
 
-  // Render login form
   return (
-    <div className="login-container">
-      <div className="login-form">
+    <LoginContainer>
+      <LoginForm>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
+          {/* Input fields */}
+          <FormGroup>
+            <Label htmlFor="name">Name</Label>
+            <Input
               type="text"
               onChange={handleInput}
               value={values.name}
               name="name"
               placeholder="Enter Name"
             />
-            {errors.name && <p className="error">{errors.name}</p>}
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
+            {errors.name && <Error>{errors.name}</Error>}
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="email">Email</Label>
+            <Input
               type="email"
               onChange={handleInput}
               value={values.email}
               name="email"
               placeholder="Enter Email"
             />
-            {errors.email && <p className="error">{errors.email}</p>}
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
+            {errors.email && <Error>{errors.email}</Error>}
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="password">Password</Label>
+            <Input
               type="password"
               onChange={handleInput}
               value={values.password}
               name="password"
               placeholder="Enter Password"
             />
-            {errors.password && <p className="error">{errors.password}</p>}
-          </div>
-          <button type="submit" className="login-btn">Login</button>
-          <Link to="/signup" className="create-account-link">Create Account</Link>
+            {errors.password && <Error>{errors.password}</Error>}
+          </FormGroup>
+          {/* Login button */}
+          <LoginButton type="submit">Login</LoginButton>
+          {/* Link to create account */}
+          <CreateAccountLink to="/signup">Create Account</CreateAccountLink>
         </form>
-      </div>
-    </div>
+      </LoginForm>
+    </LoginContainer>
   );
 };
 
-export default Login; // Export Login component
+export default Login;

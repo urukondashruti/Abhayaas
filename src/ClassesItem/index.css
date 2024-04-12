@@ -5,6 +5,11 @@
     margin-bottom: 30px;
     max-width:600px;
     margin: 0 auto; 
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
 }
   
   .video {
@@ -63,6 +68,10 @@
         margin-top: 30px;
         width:100%;
         margin: 0 auto; 
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
       }
       .video-container{
         padding-top:30px;

@@ -57,7 +57,7 @@ const Card = () => {
               <p className="module-info">Module: DNA</p>
               <p className="date-info">Date:10/04/24</p>
             </div>
-            <div>
+            <div className="buttonone">
               {/* Action buttons */}
               <button className="action-btn">
                 One <FontAwesomeIcon icon={faArrowDown} />

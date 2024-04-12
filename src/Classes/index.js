@@ -1,10 +1,36 @@
-import React from 'react'; // Import React library
-import Header from '../Header'; // Import Header component
-import ClassesItem from '../ClassesItem'; // Import ClassesItem component
-import './index.css'; // Import CSS file for styling
+import React from 'react';
+import styled from 'styled-components';
+import Header from '../Header';
+import ClassesItem from '../ClassesItem';
 
+// Styled components
+const Container = styled.div`
+ 
+`;
+
+const HeaderContainer = styled(Header)`
+  background-color: #007bff;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+`;
+
+const ClassesList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:30px;
+`;
+
+const Paragraph = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+`;
 // Array of classes data
-const ClassesList = [
+const ClassesList1 = [
   {
     id: '4',
     name: 'HEART THEORY',
@@ -34,17 +60,16 @@ const ClassesList = [
 // Functional component Classes
 const Classes = () => {
   return (
-    <div>
-      <Header className="header" /> {/* Render Header component */}
-      <ul className="classes-list"> {/* Container for classes list */}
-        {/* Map over ClassesList array and render ClassesItem component for each class */}
-        {ClassesList.map(each => (
-          <ClassesItem key={each.id} item={each} className="classes-item" />
+    <Container>
+      <HeaderContainer />
+      <ClassesList>
+        {ClassesList1.map(each => (
+          <ClassesItem key={each.id} item={each} />
         ))}
-      </ul>
-      <p className="para">1 2 3 4 5</p> {/* Paragraph */}
-    </div>
-  )
-}
+      </ClassesList>
+      <Paragraph>1 2 3 4 5</Paragraph>
+    </Container>
+  );
+};
 
-export default Classes; // Export the Classes component
+export default Classes;
