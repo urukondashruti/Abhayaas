@@ -8,6 +8,10 @@
 .footer-content {
     margin: 0 auto;
     max-width: 1200px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .social-icons {
@@ -38,4 +42,16 @@
 }
 .marginright{
     margin-right:10px;
+}
+
+
+@media (min-width: 1200px) {
+    .footer-content {
+        margin-left:250px;
+    }
+}
+@media (max-width: 1200px) and ((min-width: 768px)) {
+    .footer-content {
+        margin-left:100px;
+    }
 }
