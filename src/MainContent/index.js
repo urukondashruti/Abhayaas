@@ -9,48 +9,49 @@ import './index.css'; // Importing CSS file for styling
 // Array containing information about top students
 const TopStudents = [
   {
-    id: 'c22777fe-f72e-11eb-9a03-0242ac130003',
+    id: '1',
     name: 'Shravan Malhotra',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5pL5d-IqElLzMADRUcMOsL2fcwapHGo1tPw',
     Marks: '99.9 Percentile',
   },
   {
-    id: 'c2277a74-f72e-11eb-9a03-0242ac130003',
+    id:"2",
     name: 'Sneha Patil',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt64QIuF583LsYnmsc92XfZljjMZZiPVXMlA',
     Marks: '97.9 Percentile',
   },
   {
-    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    id: "3",
     name: 'Suman Tiwari',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIv940EEUFrZBYPoVjUxUWNH6AsQ1LNS033Q',
     Marks: '98.9 Percentile',
   },
   {
-    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    id: 
+    "4",
     name: 'John Manon',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgNHHubDSK_HQroqFpIz-dBGohwD6jLSAPmA',
     Marks: '98.9 Percentile',
   },
   {
-    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    id: "5",
     name: 'rahul gohor',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1sgXixToq2MXKPGjAphcdSCeyE8E6atobg',
     Marks: '100 Percentile',
   },{
-    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    id: "6",
     name: 'Sumit malhotra',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvWCRP9sJvDg9iJKyujh-VWKKGNWQClJeQzA',
     Marks: '96.9 Percentile',
   },
   {
-    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    id:"7",
     name: 'rama malhotra',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQATqPj51MdWhmjc_qFkoufNiRSSH43YJ7NgQ',
@@ -61,35 +62,35 @@ const TopStudents = [
 // Array containing reviews
 const reviews = [
   {
-    id: 'c22777fe-f72e-11eb-9a03-0242ac130003',
+    id: '11',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFl4eTlvWuatrrDtOXa78XOvx0lNZo3nn1bg',
     description:
       ' I found their course content really useful and a smart way forward to prepare for NEET exam. I use their course content from my desktop and access the videos as a slide mode for ease of preparation. ',
   },
   {
-    id: 'c2277a74-f72e-11eb-9a03-0242ac130003',
+    id: '12',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUX8UheO6LFPqtRmloKQ7WtzhNuc9OMJhSg',
     description:
       'Karo Abhayaas is a platform for students as well as teachers. And it is quite affordable as compared to other platforms and offline coaching classes.',
   },
   {
-    id: 'c2277b64-f72e-11eb-9a03-0242ac130003',
+    id: '13',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1kVqpwaE8WuNQWvciJ1fs6pRzz57fNSgBZA',
     description:
       'I subscribed to their service. They have live-chat bots, which will take 1–2 hours to connect you to a real person on chat.',
   },
   {
-    id: 'c2277c2c-f72e-11eb-9a03-0242ac130004',
+    id: '14',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ6tzZQAbcqYt4Dcn9tPatfn3wa8v7Sh0PJA',
     description:
       'I am very lucky because I am currently studying from “Lucky Sir “. He is the best teacher on this entire platform; he has a unique style of teaching.',
   },
   {
-    id: 'c2277cea-f72e-11eb-9a03-0242ac130003',
+    id: '15',
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhYuDo1w5fzaiqv0blTOnpRa5wFlxNOXyI2Q',
     description:
